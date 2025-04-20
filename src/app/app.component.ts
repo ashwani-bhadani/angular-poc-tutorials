@@ -9,5 +9,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-poc-tutorials';
+  title = 'ng-19-tutorials';
+  name = 'ashwani';
+  user1="peter";
+  user2="sam"
 }
