@@ -1,0 +1,31 @@
+.btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px;
+    color: slategray;
+    cursor: pointer;
+}
+.btn:hover{
+    border: 5px solid slategray;
+}
+.bg-dec{
+    background-color: red;
+}
+.bg-inc{
+    background-color: green;
+}
+.bg-reset{
+    background-color: yellow;
+}
+.count{
+    margin-bottom: 30px;
+    background-color: slategray;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 50px;
+    font-family: sans-serif;
+    margin: auto;
+    padding: 10px;
+}
