@@ -10,16 +10,26 @@ import { Component } from '@angular/core';
 export class CounterComponent {
   count = 0
 
-  handleIncrease(){
-    this.count+=1;
+  counter(todo:string){
+    if(todo=='increase') {
+      this.count+=1
+    } else if(todo=='decrease'){
+      this.count-=1
+    } else if(todo=='reset'){
+      this.count=0
+    }
   }
 
-  handleDecrease(){
-    this.count-=1;
-  }
+  // handleIncrease(){
+  //   this.count+=1;
+  // }
 
-  handleReset(){
-    this.count=0;
-  }
+  // handleDecrease(){
+  //   this.count-=1;
+  // }
+
+  // handleReset(){
+  //   this.count=0;
+  // }
 
 }

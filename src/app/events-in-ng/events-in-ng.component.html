@@ -1,0 +1,15 @@
+<h1>events-in-ng works!</h1>
+<button class="btn-login" (click)="handleEvent($event)" >Click Event</button>
+<br>
+<br>
+<div class="test-div1" (mouseenter)="handleEvent($event)"
+style="background-color: aquamarine; width: 100px; height: 100px; border-radius: 50%;">
+</div>
+
+<div class="test-div2" (mouseleave)="handleEvent($event)"
+style="background-color: blueviolet; width: 100px; height: 100px; border-radius: 50%;">
+</div>
+
+<input type="text" (click)="handleEvent($event)" name="user"
+(focus)="handleEvent($event)"
+/>
