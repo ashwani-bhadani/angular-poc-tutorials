@@ -5,12 +5,14 @@ import { ProfileComponent } from './profile/profile.component';
 import { DatatypesComponent } from './datatypes/datatypes.component';
 import { CounterComponent } from './counter/counter.component';
 import { EventsInNgComponent } from './events-in-ng/events-in-ng.component';
+import { InputsInNgComponent } from './inputs-in-ng/inputs-in-ng.component';
+import { IfelseInNgComponent } from './ifelse-in-ng/ifelse-in-ng.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent],
-  imports: [EventsInNgComponent],
+  // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent, EventsInNgComponent,InputsInNgComponent],
+  imports: [IfelseInNgComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

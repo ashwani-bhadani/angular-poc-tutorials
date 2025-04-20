@@ -1,0 +1,52 @@
+<p>ifelse-in-ng works!</p>
+<h1>If Else & Else-If | Control Flow</h1>
+
+<button (click)="handleColor(1)">grey</button>
+<button (click)="handleColor(2)">aqua</button>
+<button (click)="handleColor(3)">green</button>
+<button (click)="handleColor(4)">lime</button>
+<input type="text" (input)="handleInput($event)" placeholder="color number" />
+
+@if(color == 1) {
+    <div style="width: 200px; height: 100px; background-color: darkslategrey;"></div>
+} 
+@else if(color == 2) {
+    <div style="width: 200px; height: 100px; background-color: aquamarine;"></div>
+}
+@else if(color == 3){
+    <div style="width: 200px; height: 100px; background-color: darkseagreen;"></div>
+}
+@else {
+    <div style="width: 200px; height: 100px; background-color: greenyellow;"></div>
+}
+
+<input type="text" placeholder="color name" (input)="handleColorName($event)" />
+@switch (colorname) {
+    @case ('red') { <h1 style="background-color: red;">Red</h1>}
+    @case ('black') { <h1 style="background-color: black;">black</h1>}
+    @case ('yellow') { <h1 style="background-color: yellow;">yellow</h1>}
+    @case ('green') { <h1 style="background-color: green;">green</h1>}
+    @case ('pink') { <h1 style="background-color: pink;">pink</h1>}
+    @case ('purple') { <h1 style="background-color: purple;">purple</h1>}
+    @case ('blue') { <h1 style="background-color: blue;">blue</h1>}
+    @case ('offwhite') { <h1 style="background-color: antiquewhite;">offwhite</h1>}
+    @default { <h1 style="background-color: cyan;">no matching color</h1>}
+}
+
+<!-- 
+@if (display) {
+    <div style="width: 200px; height: 200px; background-color: darkslategrey; border-radius: 50%;"
+    ></div>
+}
+
+below ternary may fail if you use strings inside results 1 & 2, use single quotes 
+<button (click)="toggle()">{{display ?'show div1': 'show div2'}}</button>
+
+@if (x>=10) {
+    <div style="width: 200px; height: 200px; background-color: dodgerblue; border-radius: 50%;"
+    ></div>
+
+}
+    <input type="number" />
+    <button (click)="toggleBlueDiv($event)">toggleBlueDiv</button> -->
+
