@@ -12,6 +12,15 @@ export class IfelseInNgComponent {
   x:number=10
   color:number=10
   colorname="blue"
+  usersList=["anil","bruce","robert","tony","samantha","carla"]
+  students=[
+    {name:"anil",age:25,email:"anil@gmail.com"},
+    {name:"swapnil",age:26,email:"swapnil@gmail.com"},
+    {name:"swapna",age:27,email:"swapna@gmail.com"},
+    {name:"vikrant",age:28,email:"vikrant@gmail.com"},
+    {name:"piyush",age:29,email:"piyush@gmail.com"},
+    {name:"rekha",age:30,email:"rekha@gmail.com"}
+  ]
 
   toggle(){ //clicking on blue div will hide/show the gray div
     this.display=!this.display
@@ -40,5 +49,9 @@ export class IfelseInNgComponent {
 
   //else-if conditions can help check multiple conditions compared to if-else
 
+
+  getEmail(email:string) {
+    console.log("email: ",email)
+  }
 
 }

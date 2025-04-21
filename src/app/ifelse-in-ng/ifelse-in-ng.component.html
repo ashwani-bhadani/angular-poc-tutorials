@@ -33,6 +33,20 @@
     @default { <h1 style="background-color: cyan;">no matching color</h1>}
 }
 
+<h1>for loop in ng 18</h1>
+@for (item of usersList; track item) {
+    <p>{{item}}</p>
+}
+<hr>
+@for (student of students; track student.name; let idx=$index) {
+    <p><span>{{idx+1}}</span></p>
+    <p><span>{{student.name}}</span></p>
+    <p><span>{{student.age}}</span></p>
+    <p><span>{{student.email}}</span></p>
+    <button (click)="getEmail(student.email)" >get email</button>
+}
+
+
 <!-- 
 @if (display) {
     <div style="width: 200px; height: 200px; background-color: darkslategrey; border-radius: 50%;"
