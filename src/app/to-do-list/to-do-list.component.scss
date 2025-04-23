@@ -1,0 +1,6 @@
+.task-list{
+    // display: inline;
+    display: flex; // to have all <li> in one row
+    list-style: none; //to not have bullets
+    justify-content: space-around;
+}

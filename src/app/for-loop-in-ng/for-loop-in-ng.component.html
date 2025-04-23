@@ -1,0 +1,27 @@
+<p>for-loop-in-ng works!</p>
+@for (user of users; track $index;
+     let f = $first;
+     let l = $last;
+) {
+    <!-- no need to use interpolation inside braces -->
+    @if($first || $last) {
+        <h3 style="background-color: blueviolet;">user {{user}} is {{$index+1}} in position which is either first or last</h3>
+    }
+
+    <!-- can also declare varibles in for loop but inside braces only & available in loop scope,
+      but terminate all stmts -->
+     @if(f || l){
+        <p style="background-color: cyan;">user in either first or last position</p>
+     } @else if ($odd) {
+        <p style="background-color: red;">user is in odd position</p>
+     } @else {
+        <p style="background-color: yellow;">user is in even pos</p>
+     }
+
+    <h3 style="background-color: greenyellow;">user {{user}} is {{$index+1}} in position</h3>    
+   
+}
+@empty{
+    <!-- <h3>{{$count}}</h3>  contextual vars not available outside for loop-->
+    <p>example of empty tag in for loop</p>
+}

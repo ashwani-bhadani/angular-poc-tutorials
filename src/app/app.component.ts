@@ -9,13 +9,17 @@ import { InputsInNgComponent } from './inputs-in-ng/inputs-in-ng.component';
 import { IfelseInNgComponent } from './ifelse-in-ng/ifelse-in-ng.component';
 import { SignalsInNgComponent } from './signals-in-ng/signals-in-ng.component';
 import { EffectsInNgComponent } from './effects-in-ng/effects-in-ng.component';
+import { ForLoopInNgComponent } from './for-loop-in-ng/for-loop-in-ng.component';
+import { TwoWayBindingInNgComponent } from "./two-way-binding-in-ng/two-way-binding-in-ng.component";
+import { ToDoListComponent } from "./to-do-list/to-do-list.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent,
-  //  EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent, SignalsInNgComponent],
-  imports: [EffectsInNgComponent],
+  //  EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent, SignalsInNgComponent, EffectsInNgComponent,
+  // ForLoopInNgComponent,TwoWayBindingInNgComponent ],
+  imports: [ToDoListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

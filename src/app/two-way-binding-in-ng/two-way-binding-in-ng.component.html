@@ -1,0 +1,8 @@
+<h3>two-way-binding-in-ng works!</h3>
+<!-- example of two-way binding using ngModel where 2nd param in property in .ts file -->
+<input [(ngModel)] = "name" type="text" placeholder="enter name" />
+<p>updated name: {{name}}</p>
+
+<!-- method 2 of 2-way binding -->
+ <input (input)="updateName($event)" type="text" placeholder="enter name">
+<p>live updated name : {{name2}}</p>
