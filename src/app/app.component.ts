@@ -8,12 +8,14 @@ import { EventsInNgComponent } from './events-in-ng/events-in-ng.component';
 import { InputsInNgComponent } from './inputs-in-ng/inputs-in-ng.component';
 import { IfelseInNgComponent } from './ifelse-in-ng/ifelse-in-ng.component';
 import { SignalsInNgComponent } from './signals-in-ng/signals-in-ng.component';
+import { EffectsInNgComponent } from './effects-in-ng/effects-in-ng.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent, EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent],
-  imports: [SignalsInNgComponent],
+  // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent,
+  //  EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent, SignalsInNgComponent],
+  imports: [EffectsInNgComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
