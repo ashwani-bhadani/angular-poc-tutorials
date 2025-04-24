@@ -1,0 +1,10 @@
+<p>dynamic-styling works!</p>
+<!-- use sq bracket [] for applying style using props in .ts file, .px you can specify pixels here & just value in .ts file -->
+<h1 [style.backgroundColor]="bgcolor" 
+    [style.fontSize.px]="fontSize"
+>STYLE DYNAMIC</h1>
+
+<!-- since h3 zoom etc are props, they do not be in '' commas, but for 50px enclose in '50px' as these are not props -->
+<h1 [style.fontSize.px]="zoom ? h3Big : h3Small"
+>Heading</h1>
+<button (click)="updateSize()" >apply style dynamically</button>

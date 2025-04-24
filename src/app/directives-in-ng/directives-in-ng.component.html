@@ -1,0 +1,47 @@
+<h2>directives-in-ng works!</h2>
+<ul>
+    <li *ngFor="let user of users">
+        {{user}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let student of studentData">
+        {{student.name}}
+        {{student.age}}
+        {{student.email}}
+    </li>
+</ul>
+
+<h1 *ngIf="show" >*ngIf example</h1>
+
+<div *ngIf="loggedIn; else elseBlock">
+    <!-- if loggedIn prop in.ts is true show logout else trigger the #elseBlock as ng-template -->
+     <!-- prevent default anchor behaviour by (click)="loggingToggle($event) -->
+    <a (click)="loggingToggle($event)"  href="https://jsonplaceholder.typicode.com/posts/1">logout</a>
+</div>
+<ng-template #elseBlock>
+    <a (click)="loggingToggle($event)" href="https://jsonplaceholder.typicode.com/posts/2">login</a>
+</ng-template>
+
+
+<h1  >*ngSwitch example</h1>
+<!-- take that section into a div & mention on which property you want to apply property color 
+ & import both NgSwitch & NgSwitchCase for binding prop [ngSwitch] & *ngSwitchCase -->
+ <!-- <button (click)="colorCode+1">increase</button>
+  the problem is that you're using expression syntax (colorCode + 1) without assigning the result.
+   That won’t actually change the value of colorCode. -->
+ <button (click)="colorCode=colorCode+1">increase</button>
+ <button (click)="colorCode=colorCode-1">decrease</button>
+ <div [ngSwitch]="colorCode" >
+    <h1 *ngSwitchCase="1" style="background-color: red;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchCase="2" style="background-color: cyan;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchCase="3" style="background-color: yellow;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchCase="4" style="background-color: purple;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchCase="5" style="background-color: gray;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchCase="6" style="background-color: pink;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchCase="7" style="background-color: blue;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchCase="8" style="background-color: antiquewhite;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchCase="9" style="background-color: silver;">HELLO from *ngSwitch</h1>
+    <h1 *ngSwitchDefault style="background-color: black; color: bisque;">Default case: NO COLOR MATCH</h1>
+ </div>

@@ -12,14 +12,18 @@ import { EffectsInNgComponent } from './effects-in-ng/effects-in-ng.component';
 import { ForLoopInNgComponent } from './for-loop-in-ng/for-loop-in-ng.component';
 import { TwoWayBindingInNgComponent } from "./two-way-binding-in-ng/two-way-binding-in-ng.component";
 import { ToDoListComponent } from "./to-do-list/to-do-list.component";
+import { DynamicStylingComponent } from "./dynamic-styling/dynamic-styling.component";
+import { DirectivesInNgComponent } from "./directives-in-ng/directives-in-ng.component";
+import { RoutingInNgComponent } from "./routing-in-ng/routing-in-ng.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent,
   //  EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent, SignalsInNgComponent, EffectsInNgComponent,
-  // ForLoopInNgComponent,TwoWayBindingInNgComponent ],
-  imports: [ToDoListComponent],
+  // ForLoopInNgComponent,TwoWayBindingInNgComponent, ToDoListComponent, DynamicStylingComponent, DirectivesInNgComponent,
+  // ],
+  imports: [RoutingInNgComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
