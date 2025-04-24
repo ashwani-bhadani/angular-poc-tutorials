@@ -1,1 +1,17 @@
 <p>routing-in-ng works!</p>
+<!-- inside this router-outlest you will see your pages, add links using routerLink prop not href -->
+<ul>
+    <li>
+        <!-- here the link should be a slash & the name you configured in app.routes.ts, 
+         clicking on link will open the component, it is must to add router-outlet tag -->
+        <a routerLink="/login" >login</a>
+    </li>
+    <li>
+        <a routerLink="/contact">contact</a>
+    </li>
+    <li>
+        <a routerLink="/about">about</a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>
