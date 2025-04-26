@@ -4,7 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [RouterLink],
+  imports: [], //RouterLink
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
 })

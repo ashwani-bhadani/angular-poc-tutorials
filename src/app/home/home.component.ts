@@ -5,7 +5,7 @@ import { UserComponent } from "../user/user.component";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, UserComponent],
+  imports: [RouterLink, ], //UserComponent
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

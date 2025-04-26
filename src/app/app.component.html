@@ -1,7 +1,27 @@
-<app-reactive-form-grouping></app-reactive-form-grouping>
+<h1>Parent Component</h1>
 
+
+
+
+
+<!-- sending user data from parent to child & make user enclosed in [] so it is taken as property from .ts not a string
+ 1 just sending string = <app-pass-data-from-parent-to-child user="Anil Sharma"></app-pass-data-from-parent-to-child>
+ 2 sending from app.ts file = <app-pass-data-from-parent-to-child [user]="title"></app-pass-data-from-parent-to-child>
+ to pass data from html components do like below:
+ <app-pass-data-from-parent-to-child [user]="selectedUser.value"></app-pass-data-from-parent-to-child>
+<select #selectedUser (change)="onSelectUser(selectedUser.value)" >
+    <option value="user1">user1</option>
+    <option value="user2">user2</option>
+    <option value="user3">user3</option>
+    <option value="user4">user4</option>
+</select>
+
+Sending multiple data
+  -->
 <!-- 
  
+ <app-template-driven-forms></app-template-driven-forms>
+ <app-reactive-form-grouping></app-reactive-form-grouping>
  <app-basic-reactive-forms></app-basic-reactive-forms>
  <app-routing-in-ng></app-routing-in-ng>
  <app-directives-in-ng></app-directives-in-ng>

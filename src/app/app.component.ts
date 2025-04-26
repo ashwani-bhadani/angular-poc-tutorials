@@ -17,6 +17,8 @@ import { DirectivesInNgComponent } from "./directives-in-ng/directives-in-ng.com
 import { RoutingInNgComponent } from "./routing-in-ng/routing-in-ng.component";
 import { BasicReactiveFormsComponent } from "./basic-reactive-forms/basic-reactive-forms.component";
 import { ReactiveFormGroupingComponent } from './reactive-form-grouping/reactive-form-grouping.component';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { PassDataFromParentToChildComponent } from "./pass-data-from-parent-to-child/pass-data-from-parent-to-child.component";
 
 @Component({
   selector: 'app-root',
@@ -24,14 +26,19 @@ import { ReactiveFormGroupingComponent } from './reactive-form-grouping/reactive
   // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent,
   //  EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent, SignalsInNgComponent, EffectsInNgComponent,
   // ForLoopInNgComponent,TwoWayBindingInNgComponent, ToDoListComponent, DynamicStylingComponent, DirectivesInNgComponent,
-  // RoutingInNgComponent, BasicReactiveFormsComponent],
-  imports: [ReactiveFormGroupingComponent],
+  // RoutingInNgComponent, BasicReactiveFormsComponent,ReactiveFormGroupingComponent, TemplateDrivenFormsComponent],
+  imports: [PassDataFromParentToChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
 
-  // title = 'ng-19-tutorials';
+  title = 'ng-19-tutorials'; //you can also send property from parent to child
+  //to take data from html select box
+  onSelectUser(user:string){
+    this.title= 
+  }
+
   // name = 'ashwani'; //these properties available to app.component.html as defined in templateUrl
   // user1="peter";
   // user2="sam"
