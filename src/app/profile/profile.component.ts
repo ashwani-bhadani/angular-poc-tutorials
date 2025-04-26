@@ -1,41 +1,29 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-profile', //even if u change selector to html reserved word, ng will override the html keyword, for your selector name
-    // template: `<h1>Profile Component</h1>`,
-    // styles: `h1{color:orange}`,
-    templateUrl: './profile.component.html',
-    styleUrl: './profile.component.css',
-    standalone: true
+  selector: 'app-profile',
+  standalone: true,
+  imports: [], //RouterLink
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.scss'
 })
 export class ProfileComponent {
- handleProfileSubmit() { //in ng no need to use var, let here, also function keyword not required
-    //when you pass event as parameter you must also define its type
-    // alert("Profile Submitted");
-    console.log("handleProfileSubmit called")
-    //to call other functions part of this class, you need to use this keyword
-    this.otherFunction() //never forget to add () to invoke the function
- }
+  //passing data across components like user name
+  //to bind this username from html, create constructor & register the active router as a
+  // must else you get binding error, also can make this route private
+  constructor(private route:ActivatedRoute){} //will take data from home page
 
- otherFunction() {
-    console.log("other function called by profile submit ")
- }
+  username:string|null=""
+  //ngOnInit is a lifecycle directive that is called on page load automatically, use it to get the value of URL
+  //now route will have a snapshot & every instance having RouterLink will have route, get the params from snapshot
+  //and get the key passed in html from the param map, using the data we got from home page
+  ngOnInit():void{
+    this.username = this.route.snapshot.paramMap.get("name")
+    // console.log(this.route)
+    console.log( this.username ) //you can use this param in the same html page now
+  }
+
+
+
 }
-
-/**
-    any component must have a component.ts file
-    in ng component names start from lower case, in react it is upper case
-    export is a normal type-script class, but it should have decorators
-    also need to import component from @angular/core
-
-    every component must have decorator @Component : marks a class as an 
-    Angular component and provides configuration metadata that determines 
-    how the component should be processed, instantiated, and used at runtime.
-
-    Inside atleast need to have two things : 1 selector to define html tag & template to write html
-
-    If ProfileComponent is NOT marked as standalone: true, you must not import it directly in 
-    another component or route or It must be imported via an NgModule
-
-    if your component is very small, do not add diff files, instead directly use the html & css
- */

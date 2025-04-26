@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-routing-in-ng',
   standalone: true,
-  imports: [RouterLink, RouterOutlet],
+  imports: [HeaderComponent, RouterOutlet],
   templateUrl: './routing-in-ng.component.html',
   styleUrl: './routing-in-ng.component.scss'
 })
