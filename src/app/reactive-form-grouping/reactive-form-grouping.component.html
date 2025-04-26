@@ -1,0 +1,36 @@
+<h1>reactive-form-grouping</h1>
+
+<form [formGroup]="profileRegistration"  (ngSubmit)="onSubmit()">
+    <!-- we need to bind properties in .ts file to keys here  -->
+    <input type="text" placeholder="first name" formControlName="fname">
+    <!-- validation messages on error, can use the getter created instead of this.profileRegistration.value.fname -->
+    <span *ngIf="fname?.hasError('required')">first name is required</span>
+    <span *ngIf="fname?.invalid && (fname?.dirty || fname?.touched)">provide first name</span>
+    <br>
+    <br>
+    <input type="text" placeholder="last name" formControlName="lname">
+    <span class="error" *ngIf="lname?.hasError('required')">last name is required</span>
+    <span *ngIf="lname?.invalid && (lname?.dirty || lname?.touched)">provide last name</span>
+    <br>
+    <br>
+    <input type="text" placeholder="password" formControlName="password">
+    <span class="error" *ngIf="password?.hasError('required')">password is required</span>
+    <span *ngIf="password?.invalid && (password?.dirty || password?.touched)">provide password</span>
+    <br>
+    <br>
+    <input type="text" placeholder="email" formControlName="email">
+    <span class="error" *ngIf="email?.hasError('required')">email is required</span>
+    <span *ngIf="email?.invalid && (email?.dirty || email?.touched)">provide email</span>
+    <br>
+    <br>
+    <!-- default button type is submit -->
+    <button>register</button>
+    <br><br>
+    <button type="button" (click)="setDefaultValues()" >set defaults</button>
+
+</form>
+
+<!-- can show form group properties all the time in UI, will also show null -->
+<h3>{{this.profileRegistration.value.password}}</h3>
+<h3>{{this.profileRegistration.value.email}}</h3>
+<h3>{{this.profileRegistration.value.fname +" "+  this.profileRegistration.value.fname}}</h3>

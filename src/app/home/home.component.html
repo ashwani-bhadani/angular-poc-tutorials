@@ -6,3 +6,14 @@
 <br>
   <!-- m2 of passing variables -->
  <button (click)="goToProfile()" >go to profile page</button>
+
+ <h1>user list</h1>
+<!-- example of dynamic router links will take to users page with username in url -->
+<ul>
+  @for (user of users; track user.id) {
+    <li>
+      <a routerLink="user/{{user.id}}/{{user.name}}">{{user.name}}</a>
+      <!-- now add the path to router & make it dynamic, will take to user page -->
+    </li>
+  }
+ </ul>

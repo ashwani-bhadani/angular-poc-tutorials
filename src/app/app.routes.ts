@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './user/user.component';
 
 //register all the components here by creating route objects
 export const routes: Routes = [
@@ -12,6 +13,7 @@ export const routes: Routes = [
     {path:'contact', component: ContactComponent},
     {path:'about', component: AboutComponent},
     {path:'profile', component: ProfileComponent},
+    {path:'user/:id/:name', component:UserComponent}, //what key u put here will be used to get data & place in url
     {path: '', component: HomeComponent}, //home will be on base path, so router link active
     //  will also apply to base as it is always active, so use router link active option
     

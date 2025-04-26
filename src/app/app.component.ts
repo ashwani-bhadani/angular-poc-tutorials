@@ -15,6 +15,8 @@ import { ToDoListComponent } from "./to-do-list/to-do-list.component";
 import { DynamicStylingComponent } from "./dynamic-styling/dynamic-styling.component";
 import { DirectivesInNgComponent } from "./directives-in-ng/directives-in-ng.component";
 import { RoutingInNgComponent } from "./routing-in-ng/routing-in-ng.component";
+import { BasicReactiveFormsComponent } from "./basic-reactive-forms/basic-reactive-forms.component";
+import { ReactiveFormGroupingComponent } from './reactive-form-grouping/reactive-form-grouping.component';
 
 @Component({
   selector: 'app-root',
@@ -22,8 +24,8 @@ import { RoutingInNgComponent } from "./routing-in-ng/routing-in-ng.component";
   // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent,
   //  EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent, SignalsInNgComponent, EffectsInNgComponent,
   // ForLoopInNgComponent,TwoWayBindingInNgComponent, ToDoListComponent, DynamicStylingComponent, DirectivesInNgComponent,
-  // ],
-  imports: [RoutingInNgComponent],
+  // RoutingInNgComponent, BasicReactiveFormsComponent],
+  imports: [ReactiveFormGroupingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
