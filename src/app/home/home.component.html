@@ -1,1 +1,8 @@
 <p>home works!</p>
+<!-- to pass data across components you need to do binding as below on routerLink &
+  path within '' as its a string, then object which you want to send as path params 
+  M1 of passing data, we need to get this data in profile page -->
+  <a [routerLink]="['/profile',{name:'anil kumar'}]">go to profile page</a>
+<br>
+  <!-- m2 of passing variables -->
+ <button (click)="goToProfile()" >go to profile page</button>
