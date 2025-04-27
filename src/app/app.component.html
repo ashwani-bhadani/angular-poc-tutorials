@@ -1,18 +1,29 @@
 <h1>Parent Component</h1>
-<button type="button" (click)="increaseCounter()">update counter for app-pipes-in-ng, Count: {{counter}}</button>
-<div *ngIf="counter>5 && counter <10">
-  <app-pipes-in-ng [counter]="counter"></app-pipes-in-ng>
-</div>
+
 
 
 
 
 
 <!-- 
+//example for services in angular
+<button (click)="getProductData()">load products</button>
+@for (product of products; track product) {
+  <h1>product: {{product.product}}, price: {{product.price}}</h1>
+}
+
+//example of pipes & lifecycle methods usage in ng below
+<button type="button" (click)="increaseCounter()">update counter for app-pipes-in-ng, Count: {{counter}}</button>
+<div *ngIf="counter>5 && counter <10">
+  <app-pipes-in-ng [counter]="counter"></app-pipes-in-ng>
+</div>
+
+//example of reusing a component & transfering data below
 <h3>resuing app-reusing child component properties in parent component</h3>
 <app-reusing (getUsersFromParent)="reuseUsers($event)"></app-reusing>
 
-sending user data from parent to child & make user enclosed in [] so it is taken as property from .ts not a string
+//example of sending user data from parent to child
+make user enclosed in [] so it is taken as property from .ts not a string
  1 just sending string = <app-pass-data-from-parent-to-child user="Anil Sharma"></app-pass-data-from-parent-to-child>
  2 sending from app.ts file = <app-pass-data-from-parent-to-child [user]="title"></app-pass-data-from-parent-to-child>
  to pass data from html components do like below:

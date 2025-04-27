@@ -22,6 +22,7 @@ import { PassDataFromParentToChildComponent } from "./pass-data-from-parent-to-c
 import { ReusingComponent } from "./reusing/reusing.component";
 import { PipesInNgComponent } from "./pipes-in-ng/pipes-in-ng.component";
 import { NgIf } from '@angular/common';
+import { AmountServiceService } from './services/amount-service.service';
 
 @Component({
   selector: 'app-root',
@@ -30,21 +31,39 @@ import { NgIf } from '@angular/common';
   //  EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent, SignalsInNgComponent, EffectsInNgComponent,
   // ForLoopInNgComponent,TwoWayBindingInNgComponent, ToDoListComponent, DynamicStylingComponent, DirectivesInNgComponent,
   // RoutingInNgComponent, BasicReactiveFormsComponent,ReactiveFormGroupingComponent, TemplateDrivenFormsComponent,PassDataFromParentToChildComponent
-  // ReusingComponent
+  // ReusingComponent, PipesInNgComponent, NgIf
   // ],
-  imports: [PipesInNgComponent, NgIf],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
 
+  //example for services in angular
+  //create a DS to have amountService
+  // products:{
+  //   product: string
+  //   price:number
+  // }[] | undefined
+
+  // //injecting a service class & using it
+  // constructor(private amountService:AmountServiceService){
+  //   //in constructor we generally do not return anything
+  // }
+
+  // getProductData(){
+  //   this.products= this.amountService.getAmountData()
+  //   console.log(this.products)
+  // }
 
 
-  counter=0
-  increaseCounter(){
-    this.counter+=1
-  }
+  //example for lifecycle methods in angular
+  // counter=0
+  // increaseCounter(){
+  //   this.counter+=1
+  // }
   
+  //example for sending data from parent -> child & vice versa
   // title = 'ng-19-tutorials'; //you can also send property from parent to child
   // //to take data from html select box
   // onSelectUser(user:string){
