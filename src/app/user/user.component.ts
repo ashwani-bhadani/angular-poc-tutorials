@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -26,5 +26,7 @@ export class UserComponent {
         }
     )
   }
+
+  @Input() user:string='' //this property will be reused in reusing-component
 
 }
