@@ -23,6 +23,9 @@ import { ReusingComponent } from "./reusing/reusing.component";
 import { PipesInNgComponent } from "./pipes-in-ng/pipes-in-ng.component";
 import { NgIf } from '@angular/common';
 import { AmountServiceService } from './services/amount-service.service';
+import { ApiCallingService } from './services/api-calling.service';
+import { FormsModule, NgForm } from '@angular/forms';
+import { Post } from './interfaces/post';
 
 @Component({
   selector: 'app-root',
@@ -33,11 +36,48 @@ import { AmountServiceService } from './services/amount-service.service';
   // RoutingInNgComponent, BasicReactiveFormsComponent,ReactiveFormGroupingComponent, TemplateDrivenFormsComponent,PassDataFromParentToChildComponent
   // ReusingComponent, PipesInNgComponent, NgIf
   // ],
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
+  postsAll:any
+  // !! it is very imp to declare data type using interfaces in angular & use them instead
+  //example calling APIs 
+  constructor(private apiServie:ApiCallingService){}
+  
+  ngOnInit(){ //ek provider be add karna padega in app.config.ts, htthProvider otherise error dega
+  //   R3InjectorError(Environment Injector)[_ApiCallingService -> _HttpClient -> _HttpClient]: 
+  // NullInjectorError: No provider for _HttpClient!
+  
+    /* "Subscribe to the observable returned by the HTTP call to start the request and asynchronously
+     handle the emitted response data. In Angular, HTTP methods like GET return cold observables, 
+     which execute only upon subscription."
+
+    HTTP call se jo observable milta hai woh cold observable hota hai → i
+    ska matlab tabhi HTTP request fire hoti hai jab subscribe() karte hain.
+
+    subscribe() ke through response ko asynchronously handle karte hain (kyunki HTTP responses late aate hain).
+     */
+    this.apiServie.getJsonPlaceholderPosts().subscribe(
+      (data:any)=>{
+        console.log(data)
+        this.postsAll= data
+      }
+      
+    )//subscribe takes a callback function
+  }
+
+  //method to add a post by POST API via form & call method in api-calling service
+  addPostByUserId(post:Post){
+    this.apiServie.savePost(post).subscribe(
+      (data:Post) =>{
+        console.log(data)
+        // this.postsAll.s
+      }
+    )
+  }
 
   //example for services in angular
   //create a DS to have amountService

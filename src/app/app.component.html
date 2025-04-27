@@ -1,11 +1,45 @@
 <h1>Parent Component</h1>
 
+<!-- since this is a template driven form we have to add #postForm=ngForm so we can get data from forms -->
+<form #postForm="ngForm" (ngSubmit)="addPostByUserId(postForm.value)">
+  <input type="text" placeholder="user id" name="userId" ngModel>
+  <br><br>
+  <input type="text" placeholder="post id" name="id" ngModel>
+  <br><br>
+  <input type="text" placeholder="title" name="title" ngModel>
+  <br><br>
+  <input type="text" placeholder="body" name="body" ngModel>
+  <br><br>
+  <button>Add User</button>
+</form>
 
-
-
-
+@for (post of postsAll; track post.id) {
+  <ul>
+    <li>
+      <b>id: </b>{{post.id}}
+      <br>
+      <b>title: </b>{{post.title}}
+      <br>
+      <b>body: </b>{{post.body}}
+    </li>
+  </ul>
+}
 
 <!-- 
+
+//example of calling APIs in ng
+@for (post of postsAll; track post.id) {
+  <ul>
+    <li>
+      <b>id: </b>{{post.id}}
+      <br>
+      <b>title: </b>{{post.title}}
+      <br>
+      <b>body: </b>{{post.body}}
+    </li>
+  </ul>
+}
+
 //example for services in angular
 <button (click)="getProductData()">load products</button>
 @for (product of products; track product) {
