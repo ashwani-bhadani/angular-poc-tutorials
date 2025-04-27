@@ -26,6 +26,7 @@ import { AmountServiceService } from './services/amount-service.service';
 import { ApiCallingService } from './services/api-calling.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Post } from './interfaces/post';
+import { LazyLoadingRouteComponent } from './lazy-loading-route/lazy-loading-route.component';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,7 @@ import { Post } from './interfaces/post';
   // RoutingInNgComponent, BasicReactiveFormsComponent,ReactiveFormGroupingComponent, TemplateDrivenFormsComponent,PassDataFromParentToChildComponent
   // ReusingComponent, PipesInNgComponent, NgIf
   // ],
-  imports: [FormsModule],
+  imports: [FormsModule, LazyLoadingRouteComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
