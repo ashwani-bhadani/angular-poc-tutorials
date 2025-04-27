@@ -1,0 +1,9 @@
+<p>reusing works!</p>
+@for (user of users; track user) {
+    <div>
+        {{user}}
+        <!-- example of using a component, import this component too & pass data to it too,
+          need to declare this property in user & @Input decorator too-->
+        <app-user [user]="user"></app-user>
+    </div>
+}

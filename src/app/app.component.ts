@@ -19,6 +19,9 @@ import { BasicReactiveFormsComponent } from "./basic-reactive-forms/basic-reacti
 import { ReactiveFormGroupingComponent } from './reactive-form-grouping/reactive-form-grouping.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { PassDataFromParentToChildComponent } from "./pass-data-from-parent-to-child/pass-data-from-parent-to-child.component";
+import { ReusingComponent } from "./reusing/reusing.component";
+import { PipesInNgComponent } from "./pipes-in-ng/pipes-in-ng.component";
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -26,18 +29,32 @@ import { PassDataFromParentToChildComponent } from "./pass-data-from-parent-to-c
   // imports: [LoginComponent,CounterComponent, ProfileComponent, DatatypesComponent,
   //  EventsInNgComponent,InputsInNgComponent, IfelseInNgComponent, SignalsInNgComponent, EffectsInNgComponent,
   // ForLoopInNgComponent,TwoWayBindingInNgComponent, ToDoListComponent, DynamicStylingComponent, DirectivesInNgComponent,
-  // RoutingInNgComponent, BasicReactiveFormsComponent,ReactiveFormGroupingComponent, TemplateDrivenFormsComponent],
-  imports: [PassDataFromParentToChildComponent],
+  // RoutingInNgComponent, BasicReactiveFormsComponent,ReactiveFormGroupingComponent, TemplateDrivenFormsComponent,PassDataFromParentToChildComponent
+  // ReusingComponent
+  // ],
+  imports: [PipesInNgComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
 
-  title = 'ng-19-tutorials'; //you can also send property from parent to child
-  //to take data from html select box
-  onSelectUser(user:string){
-    this.title= 
+
+
+  counter=0
+  increaseCounter(){
+    this.counter+=1
   }
+  
+  // title = 'ng-19-tutorials'; //you can also send property from parent to child
+  // //to take data from html select box
+  // onSelectUser(user:string){
+  //   this.title= ""
+  // }
+
+  // //reusing data properties defined in resusingComponent 
+  // reuseUsers(users:string[]){
+  //   console.log(users) //to pass this function to child component use banana braces in html
+  // }
 
   // name = 'ashwani'; //these properties available to app.component.html as defined in templateUrl
   // user1="peter";
