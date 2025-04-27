@@ -26,7 +26,8 @@ export class PipesInNgComponent {
     console.log("counter value is changed")
   }
 
-  //whenever in your component any child components DOM gets changed we use afterNextRender or afterRender
+  //whenever in your component any child components DOM gets changed we use afterNextRender= 	Runs every time all components have been rendered to the DOM.
+  //afterRender =	Runs every time all components have been rendered to the DOM.
 
 
 }
