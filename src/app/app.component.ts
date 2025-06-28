@@ -55,10 +55,6 @@ export class AppComponent {
     /* "Subscribe to the observable returned by the HTTP call to start the request and asynchronously
      handle the emitted response data. In Angular, HTTP methods like GET return cold observables, 
      which execute only upon subscription."
-
-    HTTP call se jo observable milta hai woh cold observable hota hai → i
-    ska matlab tabhi HTTP request fire hoti hai jab subscribe() karte hain.
-
     subscribe() ke through response ko asynchronously handle karte hain (kyunki HTTP responses late aate hain).
      */
     this.apiServie.getJsonPlaceholderPosts().subscribe(
@@ -80,24 +76,7 @@ export class AppComponent {
     )
   }
 
-  //example for services in angular
-  //create a DS to have amountService
-  // products:{
-  //   product: string
-  //   price:number
-  // }[] | undefined
-
-  // //injecting a service class & using it
-  // constructor(private amountService:AmountServiceService){
-  //   //in constructor we generally do not return anything
-  // }
-
-  // getProductData(){
-  //   this.products= this.amountService.getAmountData()
-  //   console.log(this.products)
-  // }
-
-
+  
   //example for lifecycle methods in angular
   // counter=0
   // increaseCounter(){
